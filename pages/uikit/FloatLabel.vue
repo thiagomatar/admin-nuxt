@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import CountryService from '@/service/CountryService';
+import { CountryService } from '../../service/CountryService';
 
 const countries = ref([]);
 const cities = ref([
@@ -33,7 +33,7 @@ const searchCountry = (event) => {
     const query = event.query;
     for (let i = 0; i < countries.value.length; i++) {
         const country = countries.value[i];
-        if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+        if (country.name.toLowerCase().indexOf(query.toLowerCase()) === 0) {
             filtered.push(country);
         }
     }
